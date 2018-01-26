@@ -58,6 +58,10 @@ public class Photon : MonoBehaviour {
 
         curEnergy -= mediumProp.energyFallRate * Time.fixedDeltaTime;
 
+        if(curEnergy <= 0f)
+        {
+            ManageDeath();
+        }
     }
 
     float GetCurrentVelocity()
@@ -72,5 +76,10 @@ public class Photon : MonoBehaviour {
         float normalizedEnergy = curEnergy / maxEnergy;
         float sizeFactor = sizeCurve.Evaluate(normalizedEnergy);
         return Mathf.Lerp(minSize, maxSize, sizeFactor);
+    }
+
+    void ManageDeath()
+    {
+        Destroy(this.gameObject);
     }
 }
