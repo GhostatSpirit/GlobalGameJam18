@@ -29,12 +29,13 @@ public class PlayerControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         playerRigidbody = GetComponent<Rigidbody2D>();
-        Debug.Log(gameObject + " " + firePosition.rotation);
-        ShootingController();
+        //Debug.Log(gameObject + " " + firePosition.rotation);
+        //ShootingController();
     }
 	
 	// Update is called once per frame
 	void Update () {
+
         MovementController();
 
         if(timeSum > shootingTimeLoop)
@@ -66,8 +67,7 @@ public class PlayerControl : MonoBehaviour {
 
     void ShootingController()
     {
-        newBullet = Instantiate(bullet, firePosition.position, firePosition.rotation);
-        newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(newBullet.transform.right.x, newBullet.transform.right.y) * bulletForce);
+        Instantiate(bullet, firePosition.position, firePosition.rotation * Quaternion.Euler(0, 0, -90));
     }
 
 }
