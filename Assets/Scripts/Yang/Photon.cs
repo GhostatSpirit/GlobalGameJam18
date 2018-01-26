@@ -6,13 +6,19 @@ using UnityEngine;
 public class MediumProp
 {
     public float energyFallRate = 1f;
-    public float velocityFactor = 0f;
+    [Range(0f, 1f)]
+    public float velocityFactor = 1f;
 }
 
 public class Photon : MonoBehaviour {
+    public enum Shooter
+    {
+        Left, Right
+    };
+
+    public Shooter shooter;
 
     public float maxEnergy = 10f;
-    public float energyFallRate = 0f;
 
     [SerializeField]
     public float curEnergy;
@@ -23,12 +29,11 @@ public class Photon : MonoBehaviour {
     public float minVelocity = 2f;
     public float maxVelocity = 10f;
 
-    [Range(0f, 1f)]
-    public float mediumVelocityFactor = 1f;
 
     public AnimationCurve sizeCurve;
     public AnimationCurve velocityCurve;
 
+    public MediumProp mediumProp;
 
     Rigidbody2D rb;
 
@@ -51,16 +56,15 @@ public class Photon : MonoBehaviour {
     {
         rb.velocity = transform.up * GetCurrentVelocity();
 
-        curEnergy -= energyFallRate * Time.fixedDeltaTime;
+        curEnergy -= mediumProp.energyFallRate * Time.fixedDeltaTime;
 
     }
 
     float GetCurrentVelocity()
     {
-        float normalizedEnergy = curEnergy / maxEnergy;
-
+        // float normalizedEnergy = curEnergy / maxEnergy;
         // float eVeloFactor = velocityCurve.Evaluate(normalizedEnergy);
-        return Mathf.Lerp(minVelocity, maxVelocity, mediumVelocityFactor);
+        return Mathf.Lerp(minVelocity, maxVelocity, mediumProp.velocityFactor);
     }
 
     float GetCurrentSize()
