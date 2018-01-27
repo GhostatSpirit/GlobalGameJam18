@@ -50,6 +50,10 @@ public class Photon : MonoBehaviour {
     public Collider2D lastScatterColl = null;
 
     Rigidbody2D rb;
+    TrailRenderer trail;
+
+    Vector3 initScale;
+    float initTrailWidthMultiplier;
 
 	// Use this for initialization
 	void Start () {
@@ -59,17 +63,27 @@ public class Photon : MonoBehaviour {
         {
             curEnergy = maxEnergy;
         }
-        
-        transform.localScale = new Vector3(maxSize, maxSize, maxSize);
+
+        initScale = transform.localScale;
+        Debug.Log(initScale);
+
+        transform.localScale = new Vector3
+            (initScale.x * maxSize, initScale.y * maxSize, initScale.z * maxSize);
 
         // rb.velocity = transform.up * maxVelocity;
         rb.AddForce(transform.up * maxVelocity, ForceMode2D.Impulse);
+
+        trail = GetComponent<TrailRenderer>();
+        initTrailWidthMultiplier = trail.widthMultiplier;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         float curSize = GetCurrentSize();
-        transform.localScale = new Vector3(curSize, curSize, curSize);
+        transform.localScale = new Vector3
+            (initScale.x * curSize, initScale.y * curSize, initScale.z * curSize);
+
+        trail.widthMultiplier = curSize * initTrailWidthMultiplier;
     }
 
     private void FixedUpdate()
