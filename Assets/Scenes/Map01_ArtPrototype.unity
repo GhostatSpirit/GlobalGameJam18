@@ -731,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 896463139}
   shooter: 0
+  ps: {fileID: 0}
   photonTag: Photon
 --- !u!61 &286934521
 BoxCollider2D:
@@ -2260,6 +2261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 185212413}
   shooter: 0
+  ps: {fileID: 0}
   photonTag: Photon
 --- !u!1 &1149267778
 GameObject:
@@ -2607,11 +2609,6 @@ Prefab:
     - target: {fileID: 4385811474210462, guid: 61ef73f6c34e8334482416962ac64da4, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 96539270868920022, guid: 61ef73f6c34e8334482416962ac64da4,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0.28302
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61ef73f6c34e8334482416962ac64da4, type: 2}
@@ -3467,6 +3464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 185212413}
   shooter: 0
+  ps: {fileID: 0}
   photonTag: Photon
 --- !u!4 &1821362840 stripped
 Transform:
@@ -3778,6 +3776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 896463139}
   shooter: 0
+  ps: {fileID: 0}
   photonTag: Photon
 --- !u!61 &1958155041
 BoxCollider2D:
