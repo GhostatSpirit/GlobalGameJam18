@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerCollector : MonoBehaviour {
 
-    public PlayerStatus targetStatus; 
+    public PlayerStatus targetStatus;
+
+    public Shooter shooter;
 
     public string photonTag = "Photon";
     void OnCollisionEnter2D(Collision2D coll)
@@ -29,9 +31,10 @@ public class PlayerCollector : MonoBehaviour {
 
         if (collision.gameObject.tag == photonTag)
         {
+            
             Photon photon = collision.transform.GetComponent<Photon>();
             photon.curEnergy = 0f;
-            if (targetStatus != null)
+            if (targetStatus != null && collision.gameObject.GetComponent<Photon>().shooter == shooter)
             {
                 targetStatus.addScore(1);
             }
