@@ -716,6 +716,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 114590980673614242, guid: 1c2ff9524e0d93642b8a72f5f173b922,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c2ff9524e0d93642b8a72f5f173b922, type: 2}
   m_IsPrefabParent: 0
@@ -2056,6 +2061,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114428956460533360, guid: b372a3b9bf6415a41bb5a74202a08375,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b372a3b9bf6415a41bb5a74202a08375, type: 2}
   m_IsPrefabParent: 0
@@ -3295,6 +3305,11 @@ Prefab:
       propertyPath: m_Name
       value: RefractorNew (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114590980673614242, guid: 1c2ff9524e0d93642b8a72f5f173b922,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c2ff9524e0d93642b8a72f5f173b922, type: 2}
   m_IsPrefabParent: 0
@@ -4225,6 +4240,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114428956460533360, guid: b372a3b9bf6415a41bb5a74202a08375,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b372a3b9bf6415a41bb5a74202a08375, type: 2}
