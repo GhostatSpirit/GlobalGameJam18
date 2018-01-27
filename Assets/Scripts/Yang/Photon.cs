@@ -75,6 +75,7 @@ public class Photon : MonoBehaviour {
 
         trail = GetComponent<TrailRenderer>();
         initTrailWidthMultiplier = trail.widthMultiplier;
+        Debug.Log(initTrailWidthMultiplier);
 	}
 	
 	// Update is called once per frame
@@ -83,7 +84,7 @@ public class Photon : MonoBehaviour {
         transform.localScale = new Vector3
             (initScale.x * curSize, initScale.y * curSize, initScale.z * curSize);
 
-        trail.widthMultiplier = curSize * initTrailWidthMultiplier;
+        trail.widthMultiplier = initScale.x * curSize * initTrailWidthMultiplier;
     }
 
     private void FixedUpdate()
