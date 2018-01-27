@@ -63,7 +63,7 @@ public class RefractorLine : MonoBehaviour {
             Quaternion refractRot = Quaternion.Euler(0f, 0f, refractionK * angle);
             refractedVelocity = refractRot * lastVelocity;
 
-            Debug.Log(angle);
+            //Debug.Log(angle);
             // collision.transform.Rotate(0, 0, refractionK * angle);
         }
 
