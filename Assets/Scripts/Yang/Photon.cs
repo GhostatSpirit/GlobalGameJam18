@@ -21,7 +21,7 @@ public class Photon : MonoBehaviour {
     public float maxEnergy = 10f;
 
     [SerializeField]
-    public float curEnergy;
+    public float curEnergy = 0;
 
     public float minSize = 0.2f;
     public float maxSize = 1f;
@@ -35,13 +35,29 @@ public class Photon : MonoBehaviour {
 
     public MediumProp mediumProp;
 
+
+    bool _canScatter = true;
+    public bool canScatter {
+        get {
+            return _canScatter;
+        }
+    }
+    Coroutine scatterImmuneRoutine = null;
+
+    [HideInInspector]
+    public Collider2D lastScatterColl = null;
+
     Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
 
-        curEnergy = maxEnergy;
+        if(curEnergy == 0f)
+        {
+            curEnergy = maxEnergy;
+        }
+        
         transform.localScale = new Vector3(maxSize, maxSize, maxSize);
 
         // rb.velocity = transform.up * maxVelocity;
@@ -96,5 +112,24 @@ public class Photon : MonoBehaviour {
     void ManageDeath()
     {
         Destroy(this.gameObject);
+    }
+
+    public void StartScatterImmune(float immuneTime)
+    {
+        if(scatterImmuneRoutine != null)
+        {
+            StopCoroutine(scatterImmuneRoutine);
+            scatterImmuneRoutine = null;
+        }
+        
+        scatterImmuneRoutine = StartCoroutine(ScatterImmuneIE(immuneTime));
+        
+    }
+
+    IEnumerator ScatterImmuneIE(float immuneTime)
+    {
+        _canScatter = false;
+        yield return new WaitForSeconds(immuneTime);
+        _canScatter = true;
     }
 }
