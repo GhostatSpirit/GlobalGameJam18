@@ -19,7 +19,7 @@ public class PhotonDestroyer : MonoBehaviour {
         if (coll.gameObject.tag == photonTag)
         {
             Photon photon = coll.transform.GetComponent<Photon>();
-            photon.curEnergy = 0f;
+            photon.InstantDead();
         }
     }
 }

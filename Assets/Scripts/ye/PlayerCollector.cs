@@ -18,7 +18,7 @@ public class PlayerCollector : MonoBehaviour {
         if (coll.gameObject.tag == photonTag)
         {
             Photon photon = coll.transform.GetComponent<Photon>();
-            photon.curEnergy = 0f;
+            photon.InstantDead();
             if (targetStatus != null)
             {
                 targetStatus.addScore(1);
@@ -35,7 +35,7 @@ public class PlayerCollector : MonoBehaviour {
         {
             
             Photon photon = collision.transform.GetComponent<Photon>();
-            photon.curEnergy = 0f;
+            photon.InstantDead();
             if (targetStatus != null && collision.gameObject.GetComponent<Photon>().shooter == shooter)
             {
                 //Debug.Log("in");
