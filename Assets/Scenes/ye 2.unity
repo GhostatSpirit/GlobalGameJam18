@@ -946,7 +946,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4069274079816326, guid: 69b7cf2cf9a88624caf578deb164ccec, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4069274079816326, guid: 69b7cf2cf9a88624caf578deb164ccec, type: 2}
       propertyPath: m_LocalRotation.w
@@ -964,6 +964,10 @@ Prefab:
         type: 2}
       propertyPath: refractionK
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069274079816326, guid: 69b7cf2cf9a88624caf578deb164ccec, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69b7cf2cf9a88624caf578deb164ccec, type: 2}
@@ -1165,6 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonTag: Photon
   reflectSound: {fileID: 0}
+  random: 0
   refractionK: 0.5
 --- !u!114 &896463139 stripped
 MonoBehaviour:
@@ -1804,6 +1809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonTag: Photon
   reflectSound: {fileID: 0}
+  random: 0
   refractionK: 0.5
 --- !u!1 &1522739280
 GameObject:
@@ -2064,6 +2070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonTag: Photon
   reflectSound: {fileID: 0}
+  random: 0
   refractionK: 0.7
 --- !u!58 &1634077806
 CircleCollider2D:
