@@ -35,7 +35,7 @@ public class Refractor : MonoBehaviour {
 
         Vector3 lastVelocity = hitRigidbody.velocity;
         Vector3 refractedVelocity = lastVelocity;
-        Debug.Log(angle);
+        //Debug.Log(angle);
         if (angle <= 0.5)
         {
             float t = Random.value;
@@ -80,7 +80,7 @@ public class Refractor : MonoBehaviour {
         Vector3 lastVelocity = hitRigidbody.velocity;
         Vector3 refractedVelocity = lastVelocity;
 
-        Quaternion refractRot = Quaternion.Euler(0f, 0f, refractionK * angle);
+        Quaternion refractRot = Quaternion.Euler(0f, 0f, -refractionK * angle);
         refractedVelocity = refractRot * lastVelocity;
 
         hitRigidbody.velocity = refractedVelocity;
