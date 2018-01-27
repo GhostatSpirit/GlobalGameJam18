@@ -18,7 +18,7 @@ public class RefractorLine : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("in");
+        //Debug.Log("in");
 
         Rigidbody2D hitRigidbody = collision.GetComponent<Rigidbody2D>();
 
@@ -50,7 +50,7 @@ public class RefractorLine : MonoBehaviour {
         }
         else
         {
-            Debug.Log("here");
+            //Debug.Log("here");
             if(angle > 90)
             {
                 angle = 180 - angle;

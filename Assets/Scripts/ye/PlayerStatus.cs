@@ -21,7 +21,7 @@ public class PlayerStatus : MonoBehaviour {
         {
             health = 0;
         }
-        Debug.Log(health);
+        //Debug.Log(health);
 	}
 
     public void addScore(float hitScore)
@@ -31,7 +31,7 @@ public class PlayerStatus : MonoBehaviour {
 
     public void MinusHealth(float points)
     {
-        Debug.Log("minus now");
+        //Debug.Log("minus now");
         if(health > 0)
         {
             health -= points;

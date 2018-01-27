@@ -33,18 +33,18 @@ public class PlayerCollector : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit trigger!");
+        //Debug.Log("Hit trigger!");
 
         if (collision.gameObject.tag == photonTag)
         {
 
-            Debug.Log("Now trigger!");
+            //Debug.Log("Now trigger!");
 
             Photon photon = collision.transform.GetComponent<Photon>();
 
             points = photon.curEnergy;
 
-            Debug.Log("photon: "+points);
+            //Debug.Log("photon: "+points);
 
             photon.curEnergy = 0f;
             if (targetStatus != null && collision.gameObject.GetComponent<Photon>().shooter == shooter)
