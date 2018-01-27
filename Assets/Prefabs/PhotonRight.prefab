@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114766135660983962}
   - component: {fileID: 96803384793848118}
   m_Layer: 8
-  m_Name: Photon
+  m_Name: Photon 1
   m_TagString: Photon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

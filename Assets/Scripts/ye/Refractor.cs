@@ -32,18 +32,30 @@ public class Refractor : MonoBehaviour {
 
         float angle = GetAngle(velocityNormalized, normalDirection);
 
-        if(angle <= 10)
+
+        Vector3 lastVelocity = hitRigidbody.velocity;
+        Vector3 refractedVelocity = lastVelocity;
+        if (angle <= 10)
         {
             float t = Random.value;
 
             t = (t > 0.5) ? 1 : -1;
 
-            collision.transform.Rotate(0, 0, 10 * t);
+            Quaternion refractRot = Quaternion.Euler(0f, 0f, 10f * t);
+            refractedVelocity = refractRot * lastVelocity;
+            
+
+            // collision.transform.Rotate(0, 0, 10 * t);
         }
         else
         {
-            collision.transform.Rotate(0, 0, refractionK * angle);
+            Quaternion refractRot = Quaternion.Euler(0f, 0f, refractionK * angle);
+            refractedVelocity = refractRot * lastVelocity;
+
+            // collision.transform.Rotate(0, 0, refractionK * angle);
         }
+
+        hitRigidbody.velocity = refractedVelocity;
 
     }
 
@@ -63,7 +75,16 @@ public class Refractor : MonoBehaviour {
 
         finalAngle = finalAngle - (int)finalAngle / 180 * 180;
 
-        collision.transform.Rotate(0, 0, refractionK * angle);
+
+        Vector3 lastVelocity = hitRigidbody.velocity;
+        Vector3 refractedVelocity = lastVelocity;
+
+        Quaternion refractRot = Quaternion.Euler(0f, 0f, refractionK * angle);
+        refractedVelocity = refractRot * lastVelocity;
+
+        hitRigidbody.velocity = refractedVelocity;
+
+        // collision.transform.Rotate(0, 0, refractionK * angle);
     }
 
     private static float GetAngle(Vector2 v1, Vector2 v2)
