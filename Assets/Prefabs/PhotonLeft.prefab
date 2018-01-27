@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 50393868017756462}
   - component: {fileID: 114766135660983962}
   - component: {fileID: 96803384793848118}
-  m_Layer: 8
+  - component: {fileID: 114441132144415518}
+  m_Layer: 11
   m_Name: PhotonLeft
   m_TagString: Photon
   m_Icon: {fileID: 0}
@@ -114,7 +115,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2.5
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.8
@@ -166,6 +167,18 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114441132144415518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703002037296496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2516ab51aab04ce408e68616fce9e9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 198416083205975420, guid: f12efdc7268aa884dabff63fb4e88208, type: 2}
 --- !u!114 &114766135660983962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,6 +236,7 @@ MonoBehaviour:
   mediumProp:
     energyFallRate: 1
     velocityFactor: 1
+  lastScatterColl: {fileID: 0}
 --- !u!212 &212424157037270292
 SpriteRenderer:
   m_ObjectHideFlags: 1

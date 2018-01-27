@@ -47,7 +47,7 @@ public class Scatterer : MonoBehaviour {
         float veloIncomingAngle = Vector3.Angle(veloDir, transform.right);
         if (veloIncomingAngle > 90f)  veloIncomingAngle = 180f - veloIncomingAngle;
 
-        Debug.Log(veloIncomingAngle);
+        //Debug.Log(veloIncomingAngle);
         if(veloIncomingAngle < minScatterAngle)
         {
             return;

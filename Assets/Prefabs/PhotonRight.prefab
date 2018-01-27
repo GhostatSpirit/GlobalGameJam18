@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50393868017756462}
   - component: {fileID: 114766135660983962}
   - component: {fileID: 96803384793848118}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: PhotonRight
   m_TagString: Photon
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2.5
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.8
@@ -223,6 +223,7 @@ MonoBehaviour:
   mediumProp:
     energyFallRate: 1
     velocityFactor: 1
+  lastScatterColl: {fileID: 0}
 --- !u!212 &212424157037270292
 SpriteRenderer:
   m_ObjectHideFlags: 1

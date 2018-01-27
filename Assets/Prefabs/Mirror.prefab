@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31f9c34a287f314d81dcec9f9401360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refractionK: 0
+  refractionK: 0.5
 --- !u!114 &114910935401986462
 MonoBehaviour:
   m_ObjectHideFlags: 1
