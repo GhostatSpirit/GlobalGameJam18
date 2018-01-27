@@ -44,6 +44,8 @@ public class Photon : MonoBehaviour {
         curEnergy = maxEnergy;
         transform.localScale = new Vector3(maxSize, maxSize, maxSize);
 
+        // rb.velocity = transform.up * maxVelocity;
+        rb.AddForce(transform.up * maxVelocity, ForceMode2D.Impulse);
 	}
 	
 	// Update is called once per frame
@@ -54,21 +56,34 @@ public class Photon : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        rb.velocity = transform.up * GetCurrentVelocity();
+       //  rb.velocity = rb.velocity.normalized * GetCurrentVelocity();
 
         curEnergy -= mediumProp.energyFallRate * Time.fixedDeltaTime;
 
-        if(curEnergy <= 0f)
+        
+
+        if (curEnergy <= 0f)
         {
             ManageDeath();
         }
+
+
+        //float deltaSpeed = mediumProp.energyFallRate * Time.fixedDeltaTime;
+
+        //rb.AddForce(- 0.5f * rb.velocity.normalized * deltaSpeed, ForceMode2D.Impulse);
+
     }
 
-    float GetCurrentVelocity()
+    public void SetVelocityFactor(float factor)
+    {
+        rb.velocity = rb.velocity.normalized * GetVelocityMag(factor);
+    }
+
+    float GetVelocityMag(float factor)
     {
         // float normalizedEnergy = curEnergy / maxEnergy;
         // float eVeloFactor = velocityCurve.Evaluate(normalizedEnergy);
-        return Mathf.Lerp(minVelocity, maxVelocity, mediumProp.velocityFactor);
+        return Mathf.Lerp(minVelocity, maxVelocity, factor);
     }
 
     float GetCurrentSize()

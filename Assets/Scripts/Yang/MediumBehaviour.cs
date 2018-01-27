@@ -27,6 +27,9 @@ public class MediumBehaviour : MonoBehaviour {
 
             Photon photon = coll.GetComponent<Photon>();
             photon.mediumProp = mediumProp;
+
+            photon.SetVelocityFactor(mediumProp.velocityFactor);
+
         }
     }
 
