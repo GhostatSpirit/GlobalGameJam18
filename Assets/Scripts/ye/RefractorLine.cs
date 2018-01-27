@@ -30,7 +30,7 @@ public class RefractorLine : MonoBehaviour {
 
         float angle = GetAngle(velocityNormalized, normalDirection);
 
-        Debug.Log(angle);
+  //      Debug.Log(angle);
 
         Vector3 lastVelocity = hitRigidbody.velocity;
         Vector3 refractedVelocity = lastVelocity;
@@ -51,9 +51,19 @@ public class RefractorLine : MonoBehaviour {
         else
         {
             Debug.Log("here");
+            if(angle > 90)
+            {
+                angle = 180 - angle;
+            }
+            else if(angle < -90)
+            {
+                angle = -angle - 180;
+            }
+
             Quaternion refractRot = Quaternion.Euler(0f, 0f, refractionK * angle);
             refractedVelocity = refractRot * lastVelocity;
 
+            Debug.Log(angle);
             // collision.transform.Rotate(0, 0, refractionK * angle);
         }
 
