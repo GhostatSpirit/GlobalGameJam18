@@ -35,7 +35,7 @@ public class Refractor : MonoBehaviour {
 
         Vector3 lastVelocity = hitRigidbody.velocity;
         Vector3 refractedVelocity = lastVelocity;
-        if (angle <= 10)
+        if (angle <= 2)
         {
             float t = Random.value;
 
@@ -73,7 +73,7 @@ public class Refractor : MonoBehaviour {
 
         float finalAngle = refractionK * angle;
 
-        finalAngle = finalAngle - (int)finalAngle / 180 * 180;
+        //finalAngle = finalAngle - (int)finalAngle / 180 * 180;
 
 
         Vector3 lastVelocity = hitRigidbody.velocity;
