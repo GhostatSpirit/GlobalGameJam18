@@ -18,27 +18,31 @@ public class RefractorLine : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log("in");
+
         Rigidbody2D hitRigidbody = collision.GetComponent<Rigidbody2D>();
 
         RaycastHit2D hit = Physics2D.Raycast(collision.transform.position, hitRigidbody.velocity);
 
         Vector2 velocityNormalized = hitRigidbody.velocity.normalized;
 
-        Vector2 normalDirection = transform.up;
+        Vector2 normalDirection = transform.right;
 
         float angle = GetAngle(velocityNormalized, normalDirection);
 
+  //      Debug.Log(angle);
 
         Vector3 lastVelocity = hitRigidbody.velocity;
         Vector3 refractedVelocity = lastVelocity;
+
         //Debug.Log(angle);
-        if (angle <= 0.5)
+        if ((angle <= 1 && angle >= -1)|| (angle >= 179 && angle <= 180)|| (angle <= -179 && angle >= -180))
         {
             float t = Random.value;
 
             t = (t > 0.5) ? 1 : -1;
 
-            Quaternion refractRot = Quaternion.Euler(0f, 0f, 10f * t);
+            Quaternion refractRot = Quaternion.Euler(0f, 0f, 5f * t);
             refractedVelocity = refractRot * lastVelocity;
 
 
@@ -46,9 +50,20 @@ public class RefractorLine : MonoBehaviour {
         }
         else
         {
+            //Debug.Log("here");
+            if(angle > 90)
+            {
+                angle = 180 - angle;
+            }
+            else if(angle < -90)
+            {
+                angle = -angle - 180;
+            }
+
             Quaternion refractRot = Quaternion.Euler(0f, 0f, refractionK * angle);
             refractedVelocity = refractRot * lastVelocity;
 
+            //Debug.Log(angle);
             // collision.transform.Rotate(0, 0, refractionK * angle);
         }
 

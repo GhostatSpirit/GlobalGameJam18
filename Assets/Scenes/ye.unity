@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802e5b7325e9d294a92e01242d52a97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatus: {fileID: 185212413}
+  playerStatus: {fileID: 896463139}
 --- !u!1 &295508753
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +936,7 @@ Prefab:
     - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
       propertyPath: force
-      value: 400
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114306833973291666, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
@@ -946,6 +946,43 @@ Prefab:
     - target: {fileID: 114445122439964872, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
       propertyPath: shooter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50298964224944586, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 50298964224944586, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50298964224944586, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114306833973291666, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 198214904351064024, guid: 0ed342206d44b8e49bc0df4a90329ed9,
+        type: 2}
+    - target: {fileID: 114445122439964872, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 198214904351064024, guid: 0ed342206d44b8e49bc0df4a90329ed9,
+        type: 2}
+    - target: {fileID: 61686522023215968, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61086053509416660, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2109,7 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802e5b7325e9d294a92e01242d52a97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatus: {fileID: 896463139}
+  playerStatus: {fileID: 185212413}
 --- !u!1001 &2136155941
 Prefab:
   m_ObjectHideFlags: 0
@@ -2167,8 +2204,35 @@ Prefab:
     - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
       propertyPath: force
-      value: 400
+      value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 50148939783292312, guid: 9b7f9b5ffb915134d8f235e549577c72,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50148939783292312, guid: 9b7f9b5ffb915134d8f235e549577c72,
+        type: 2}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 50148939783292312, guid: 9b7f9b5ffb915134d8f235e549577c72,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114548282734961138, guid: 9b7f9b5ffb915134d8f235e549577c72,
+        type: 2}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 198214904351064024, guid: 0ed342206d44b8e49bc0df4a90329ed9,
+        type: 2}
+    - target: {fileID: 114506950467156470, guid: 9b7f9b5ffb915134d8f235e549577c72,
+        type: 2}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 198214904351064024, guid: 0ed342206d44b8e49bc0df4a90329ed9,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b7f9b5ffb915134d8f235e549577c72, type: 2}
   m_IsPrefabParent: 0

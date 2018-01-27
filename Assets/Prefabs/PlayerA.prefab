@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322268124829784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.54, y: -0.24085182, z: 0}
+  m_LocalPosition: {x: -19, y: -0.11, z: 0}
   m_LocalScale: {x: 0.3, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4791294454698814}
@@ -206,8 +206,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 10
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: c08be9c4bb6203d4cbb84dc4a4fd349b, type: 2}
@@ -227,7 +227,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.5755916, y: -5.169896}
+  m_Offset: {x: 1.39, y: -4.620536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -238,7 +238,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.7463093, y: 6.6194553}
+  m_Size: {x: 2.668591, y: 6.365903}
   m_EdgeRadius: 0
 --- !u!61 &61113749178084836
 BoxCollider2D:
@@ -252,18 +252,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.4799174, y: 0.06627631}
+  m_Offset: {x: 2.43, y: 0.06627631}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.92, y: 16.82}
+    pivot: {x: 0, y: 0.5}
+    oldSize: {x: 4.607143, y: 15.339285}
     newSize: {x: 9.92, y: 16.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.8774834, y: 3.7854195}
+  m_Size: {x: 5.0462723, y: 3.7854195}
   m_EdgeRadius: 0
 --- !u!61 &61144451567876182
 BoxCollider2D:
@@ -277,7 +277,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.5287633, y: 5.1698933}
+  m_Offset: {x: 1.39, y: 4.5360155}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -288,7 +288,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.6526527, y: 6.394661}
+  m_Size: {x: 2.8225265, y: 6.6482105}
   m_EdgeRadius: 0
 --- !u!61 &61172800074125078
 BoxCollider2D:
@@ -302,7 +302,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.5755916, y: -5.169896}
+  m_Offset: {x: 1.39, y: -4.49376}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -313,7 +313,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.7463093, y: 6.6194553}
+  m_Size: {x: 2.633381, y: 6.534936}
   m_EdgeRadius: 0
 --- !u!61 &61686522023215968
 BoxCollider2D:
@@ -327,7 +327,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.5287633, y: 5.1698933}
+  m_Offset: {x: 1.39, y: 4.5994015}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -338,7 +338,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.6526527, y: 6.394661}
+  m_Size: {x: 3.0327353, y: 6.8595047}
   m_EdgeRadius: 0
 --- !u!114 &114306833973291666
 MonoBehaviour:
@@ -352,6 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 0}
+  shooter: 0
+  ps: {fileID: 0}
   photonTag: Photon
 --- !u!114 &114445122439964872
 MonoBehaviour:
@@ -365,6 +367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 0}
+  shooter: 0
+  ps: {fileID: 0}
   photonTag: Photon
 --- !u!114 &114753319066914926
 MonoBehaviour:
@@ -394,7 +398,7 @@ MonoBehaviour:
   force: 200
   bullet: {fileID: 1703002037296496, guid: c6185d7cfadf4e542ab57628571f6180, type: 2}
   firePosition: {fileID: 4791294454698814}
-  shootingTimeLoop: 1
+  shootingTimeLoop: 0.5
   bulletForce: 40
 --- !u!212 &212318167198645314
 SpriteRenderer:
@@ -430,7 +434,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 38fde1978e4f9ba4280e3c611c0739aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6643e0e8425a75848bc1a107faa66c69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

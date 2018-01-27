@@ -17,6 +17,8 @@ TagManager:
   - Photon
   - Collector
   - PlayerCollider
+  - PhotonLeft
+  - PhotonRight
   - 
   - 
   - 
@@ -35,9 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Background
   m_SortingLayers:
   - name: Default
     uniqueID: 0
