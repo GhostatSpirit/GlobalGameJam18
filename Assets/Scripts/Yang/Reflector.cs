@@ -31,10 +31,10 @@ public class Reflector : MonoBehaviour {
         {
             if(coll.otherCollider.transform == transform)
             {
-                // hit the front side of the mirror
-                ContactPoint2D contact = coll.contacts[0];
-                //Debug.Log ("Hit!");
-                Debug.DrawRay(contact.point, contact.normal, Color.white);
+                //// hit the front side of the mirror
+                //ContactPoint2D contact = coll.contacts[0];
+                ////Debug.Log ("Hit!");
+                //Debug.DrawRay(contact.point, contact.normal, Color.white);
 
                 // play the reflect sound
                 if (coll.transform.tag != "Player")
@@ -42,10 +42,11 @@ public class Reflector : MonoBehaviour {
                     myAudioSource.PlayOneShot(reflectSound);
                 }
 
-                Vector2 hitNormal = -contact.normal;
+                
+                //Vector2 hitNormal = -contact.normal;
 
-                Vector2 newDirection = Vector2.Reflect(coll.transform.up, hitNormal);
-                coll.transform.up = newDirection.normalized;
+                //Vector2 newDirection = Vector2.Reflect(coll.transform.up, hitNormal);
+                //coll.transform.up = newDirection.normalized;
                 // myRigidbody.velocity = newDirection.normalized * initialVelocity;
             } else
             {
