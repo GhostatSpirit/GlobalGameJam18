@@ -26,7 +26,7 @@ public class RefractorLine : MonoBehaviour {
 
         Vector2 velocityNormalized = hitRigidbody.velocity.normalized;
 
-        Vector2 normalDirection = transform.up;
+        Vector2 normalDirection = transform.right;
 
         float angle = GetAngle(velocityNormalized, normalDirection);
 
