@@ -372,9 +372,9 @@ MonoBehaviour:
   upButton: 273
   downButton: 274
   force: 100
-  bullet: {fileID: 1703002037296496, guid: 80db635865997364c9526cf5f8accf4d, type: 2}
+  bullet: {fileID: 1703002037296496, guid: 61ef73f6c34e8334482416962ac64da4, type: 2}
   firePosition: {fileID: 1136495688}
-  shootingTimeLoop: 5
+  shootingTimeLoop: 1
   bulletForce: 40
 --- !u!212 &185212417
 SpriteRenderer:
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   upButton: 119
   downButton: 115
   force: 100
-  bullet: {fileID: 1703002037296496, guid: 80db635865997364c9526cf5f8accf4d, type: 2}
+  bullet: {fileID: 1703002037296496, guid: c6185d7cfadf4e542ab57628571f6180, type: 2}
   firePosition: {fileID: 1468715000}
   shootingTimeLoop: 1
   bulletForce: 40
@@ -1679,7 +1679,7 @@ Prefab:
     - target: {fileID: 114274702087165144, guid: a5ab97407aec8b243bc0a63d520cf7d2,
         type: 2}
       propertyPath: mediumProp.energyFallRate
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212728349551557046, guid: a5ab97407aec8b243bc0a63d520cf7d2,
         type: 2}
@@ -1938,19 +1938,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 68694581560910034, guid: b372a3b9bf6415a41bb5a74202a08375,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1253926430151382, guid: b372a3b9bf6415a41bb5a74202a08375, type: 2}
       propertyPath: m_Name
       value: Reflector (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212325398795988688, guid: b372a3b9bf6415a41bb5a74202a08375,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: -29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b372a3b9bf6415a41bb5a74202a08375, type: 2}
