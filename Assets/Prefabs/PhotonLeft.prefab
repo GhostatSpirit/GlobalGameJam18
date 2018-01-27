@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 50393868017756462}
   - component: {fileID: 114766135660983962}
   - component: {fileID: 96803384793848118}
-  m_Layer: 8
+  - component: {fileID: 114441132144415518}
+  m_Layer: 11
   m_Name: PhotonLeft
   m_TagString: Photon
   m_Icon: {fileID: 0}
@@ -37,9 +38,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703002037296496}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -18.51, y: 0.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -16.23, y: 0.01, z: 10}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +73,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1703002037296496}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d0c85708c71807c49a5a03b61f3a0bf7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -94,7 +95,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d9e6b3855254cdd4b9db64303e83f261, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,7 +115,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2.5
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.8
@@ -127,13 +128,19 @@ TrailRenderer:
         inSlope: 0
         outSlope: 0
         tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0.3
+        inSlope: -2.1744654
+        outSlope: -2.1744654
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.23529412, g: 1, b: 0, a: 1}
-      key1: {r: 0.23529412, g: 1, b: 0, a: 0}
+      key0: {r: 0.61960787, g: 0.98039216, b: 0.94509804, a: 1}
+      key1: {r: 0.61960787, g: 0.98039216, b: 0.94509804, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -166,6 +173,18 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114441132144415518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703002037296496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2516ab51aab04ce408e68616fce9e9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 198416083205975420, guid: f12efdc7268aa884dabff63fb4e88208, type: 2}
 --- !u!114 &114766135660983962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,8 +201,8 @@ MonoBehaviour:
   curEnergy: 0
   minSize: 0.2
   maxSize: 1
-  minVelocity: 2
-  maxVelocity: 10
+  minVelocity: 5
+  maxVelocity: 20
   sizeCurve:
     serializedVersion: 2
     m_Curve:
@@ -223,6 +242,7 @@ MonoBehaviour:
   mediumProp:
     energyFallRate: 1
     velocityFactor: 1
+  lastScatterColl: {fileID: 0}
 --- !u!212 &212424157037270292
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -257,8 +277,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c1f2889196ed0db4cbbf6f7024a91f92, type: 3}
-  m_Color: {r: 0.2352941, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 202e4b181e985d34f9dde6cf8d714200, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
