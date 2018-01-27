@@ -6,24 +6,37 @@ public class PlayerCollector : MonoBehaviour {
 
     public PlayerStatus targetStatus; 
 
-    BoxCollider2D playerCollider;
+    public string photonTag = "Photon";
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        Debug.Log("Hit!");
 
-	// Use this for initialization
-	void Start () {
-        playerCollider = GetComponent<BoxCollider2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        if (coll.gameObject.tag == photonTag)
+        {
+            Photon photon = coll.transform.GetComponent<Photon>();
+            photon.curEnergy = 0f;
+            if (targetStatus != null)
+            {
+                targetStatus.addScore(1);
+            }
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(targetStatus != null)
+        Debug.Log("Hit!");
+
+        if (collision.gameObject.tag == photonTag)
         {
-            targetStatus.addScore(1);
+            Photon photon = collision.transform.GetComponent<Photon>();
+            photon.curEnergy = 0f;
+            if (targetStatus != null)
+            {
+                targetStatus.addScore(1);
+            }
         }
     }
+
 
 }

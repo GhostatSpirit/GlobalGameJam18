@@ -29,8 +29,7 @@ public class PlayerControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         playerRigidbody = GetComponent<Rigidbody2D>();
-        //Debug.Log(gameObject + " " + firePosition.rotation);
-        //ShootingController();
+        ShootingController();
     }
 	
 	// Update is called once per frame
