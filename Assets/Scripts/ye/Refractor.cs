@@ -6,6 +6,7 @@ public class Refractor : MonoBehaviour {
     public string photonTag = "Photon";
     public AudioClip reflectSound;
     AudioSource myAudioSource;
+    public bool random = false;
 
     public float refractionK = 0.5f;
     // Use this for initialization
@@ -35,26 +36,35 @@ public class Refractor : MonoBehaviour {
 
         Vector3 lastVelocity = hitRigidbody.velocity;
         Vector3 refractedVelocity = lastVelocity;
-        //Debug.Log(angle);
-        if (angle <= 0.5)
-        {
-            float t = Random.value;
-
-            t = (t > 0.5) ? 1 : -1;
-
-            Quaternion refractRot = Quaternion.Euler(0f, 0f, 10f * t);
-            refractedVelocity = refractRot * lastVelocity;
-            
-
-            // collision.transform.Rotate(0, 0, 10 * t);
-        }
-        else
+        if(random == false)
         {
             Quaternion refractRot = Quaternion.Euler(0f, 0f, refractionK * angle);
             refractedVelocity = refractRot * lastVelocity;
-
-            // collision.transform.Rotate(0, 0, refractionK * angle);
         }
+        else
+        {
+            if (angle <= 0.5)
+            {
+                float t = Random.value;
+
+                t = (t > 0.5) ? 1 : -1;
+
+                Quaternion refractRot = Quaternion.Euler(0f, 0f, 10f * t);
+                refractedVelocity = refractRot * lastVelocity;
+
+
+                // collision.transform.Rotate(0, 0, 10 * t);
+            }
+            else
+            {
+                Quaternion refractRot = Quaternion.Euler(0f, 0f, refractionK * angle);
+                refractedVelocity = refractRot * lastVelocity;
+
+                //collision.transform.Rotate(0, 0, refractionK * angle);
+            }
+        }
+        //Debug.Log(angle);
+
 
         hitRigidbody.velocity = refractedVelocity;
 
