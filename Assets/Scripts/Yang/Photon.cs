@@ -37,6 +37,8 @@ public class Photon : MonoBehaviour {
 
     public MediumProp mediumProp;
 
+    [Range(0f, 1f)]
+    public float trailWidthFactor = 0.95f;
 
     bool _canScatter = true;
     public bool canScatter {
@@ -53,7 +55,6 @@ public class Photon : MonoBehaviour {
     TrailRenderer trail;
 
     Vector3 initScale;
-    float initTrailWidthMultiplier;
 
 	// Use this for initialization
 	void Start () {
@@ -74,8 +75,9 @@ public class Photon : MonoBehaviour {
         rb.AddForce(transform.up * maxVelocity, ForceMode2D.Impulse);
 
         trail = GetComponent<TrailRenderer>();
-        initTrailWidthMultiplier = trail.widthMultiplier;
-        Debug.Log(initTrailWidthMultiplier);
+        trail.widthMultiplier = trailWidthFactor;
+        // initTrailWidthMultiplier = trail.widthMultiplier;
+        // Debug.Log(initTrailWidthMultiplier);
 	}
 	
 	// Update is called once per frame
@@ -84,7 +86,7 @@ public class Photon : MonoBehaviour {
         transform.localScale = new Vector3
             (initScale.x * curSize, initScale.y * curSize, initScale.z * curSize);
 
-        trail.widthMultiplier = initScale.x * curSize * initTrailWidthMultiplier;
+        trail.widthMultiplier = initScale.x * curSize * trailWidthFactor;
     }
 
     private void FixedUpdate()
@@ -93,8 +95,6 @@ public class Photon : MonoBehaviour {
 
         curEnergy -= mediumProp.energyFallRate * Time.fixedDeltaTime;
 
-        
-
         if (curEnergy <= 0f)
         {
             ManageDeath();
@@ -102,8 +102,7 @@ public class Photon : MonoBehaviour {
 
 
         //float deltaSpeed = mediumProp.energyFallRate * Time.fixedDeltaTime;
-
-        //rb.AddForce(- 0.5f * rb.velocity.normalized * deltaSpeed, ForceMode2D.Impulse);
+        //rb.AddForce(-0.5f * rb.velocity.normalized * deltaSpeed, ForceMode2D.Impulse);
 
     }
 
