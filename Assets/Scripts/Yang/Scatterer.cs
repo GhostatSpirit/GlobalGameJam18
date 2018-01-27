@@ -16,6 +16,8 @@ public class Scatterer : MonoBehaviour {
     // for xx seconds
     public float scatterImmuneTime = 1f;
 
+    public bool doubleSided = false;
+
     public string photonTag = "Photon";
 
     private Collider2D scatterColl;
@@ -61,6 +63,11 @@ public class Scatterer : MonoBehaviour {
         else
         {
             normal = -transform.up;
+        }
+
+        if(!doubleSided && Vector3.Dot(veloDir, transform.up) < 0f)
+        {
+            return;
         }
 
 

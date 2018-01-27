@@ -31,12 +31,15 @@ public class Photon : MonoBehaviour {
     public float minVelocity = 2f;
     public float maxVelocity = 10f;
 
+    public float killWaitTime = 2f;
 
     public AnimationCurve sizeCurve;
     public AnimationCurve velocityCurve;
 
     public MediumProp mediumProp;
 
+    [Range(0f, 1f)]
+    public float trailWidthFactor = 0.95f;
 
     bool _canScatter = true;
     public bool canScatter {
@@ -45,6 +48,7 @@ public class Photon : MonoBehaviour {
         }
     }
     Coroutine scatterImmuneRoutine = null;
+    Coroutine killSelfRoutine = null;
 
     [HideInInspector]
     public Collider2D lastScatterColl = null;
@@ -53,7 +57,8 @@ public class Photon : MonoBehaviour {
     TrailRenderer trail;
 
     Vector3 initScale;
-    float initTrailWidthMultiplier;
+
+    Transform renderTransform;
 
 	// Use this for initialization
 	void Start () {
@@ -64,27 +69,37 @@ public class Photon : MonoBehaviour {
             curEnergy = maxEnergy;
         }
 
-        initScale = transform.localScale;
+        renderTransform = GetComponentInChildren<Renderer>().transform;
+
+        initScale = renderTransform.lossyScale;
         Debug.Log(initScale);
 
-        transform.localScale = new Vector3
+        renderTransform.localScale = new Vector3
             (initScale.x * maxSize, initScale.y * maxSize, initScale.z * maxSize);
 
         // rb.velocity = transform.up * maxVelocity;
         rb.AddForce(transform.up * maxVelocity, ForceMode2D.Impulse);
 
-        trail = GetComponent<TrailRenderer>();
-        initTrailWidthMultiplier = trail.widthMultiplier;
-        Debug.Log(initTrailWidthMultiplier);
+        trail = GetComponentInChildren<TrailRenderer>();
+        trail.widthMultiplier = trailWidthFactor;
+        // initTrailWidthMultiplier = trail.widthMultiplier;
+        // Debug.Log(initTrailWidthMultiplier);
+
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
         float curSize = GetCurrentSize();
-        transform.localScale = new Vector3
-            (initScale.x * curSize, initScale.y * curSize, initScale.z * curSize);
 
-        trail.widthMultiplier = initScale.x * curSize * initTrailWidthMultiplier;
+        Vector3 parentScale = transform.localScale;
+
+        renderTransform.localScale = new Vector3
+            (initScale.x * curSize / parentScale.x, 
+            initScale.y * curSize / parentScale.x, 
+            initScale.z * curSize / parentScale.x);
+
+        trail.widthMultiplier = initScale.x * curSize * trailWidthFactor;
     }
 
     private void FixedUpdate()
@@ -93,8 +108,6 @@ public class Photon : MonoBehaviour {
 
         curEnergy -= mediumProp.energyFallRate * Time.fixedDeltaTime;
 
-        
-
         if (curEnergy <= 0f)
         {
             ManageDeath();
@@ -102,8 +115,7 @@ public class Photon : MonoBehaviour {
 
 
         //float deltaSpeed = mediumProp.energyFallRate * Time.fixedDeltaTime;
-
-        //rb.AddForce(- 0.5f * rb.velocity.normalized * deltaSpeed, ForceMode2D.Impulse);
+        //rb.AddForce(-0.5f * rb.velocity.normalized * deltaSpeed, ForceMode2D.Impulse);
 
     }
 
@@ -126,8 +138,28 @@ public class Photon : MonoBehaviour {
         return Mathf.Lerp(minSize, maxSize, sizeFactor);
     }
 
+    public void InstantDead()
+    {
+        // Destroy(gameObject);
+        ManageDeath();
+    }
+
     void ManageDeath()
     {
+        // Destroy(this.gameObject);
+        rb.simulated = false;
+        GetComponent<Collider2D>().enabled = false;
+        GetComponentInChildren<Renderer>().enabled = false;
+
+        if(killSelfRoutine == null)
+        {
+            killSelfRoutine = StartCoroutine(KillSelf(killWaitTime));
+        }
+    }
+
+    IEnumerator KillSelf(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
         Destroy(this.gameObject);
     }
 
