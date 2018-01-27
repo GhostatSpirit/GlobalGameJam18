@@ -10,11 +10,13 @@ public class MediumProp
     public float velocityFactor = 1f;
 }
 
+public enum Shooter
+{
+    Left, Right
+};
+
 public class Photon : MonoBehaviour {
-    public enum Shooter
-    {
-        Left, Right
-    };
+    
 
     public Shooter shooter;
 

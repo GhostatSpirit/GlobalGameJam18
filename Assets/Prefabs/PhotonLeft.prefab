@@ -178,12 +178,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: 0
-  maxEnergy: 10
+  maxEnergy: 20
   curEnergy: 0
   minSize: 0.2
   maxSize: 1
-  minVelocity: 2
-  maxVelocity: 10
+  minVelocity: 5
+  maxVelocity: 20
   sizeCurve:
     serializedVersion: 2
     m_Curve:
