@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 50148939783292312}
   - component: {fileID: 114674742404166434}
   - component: {fileID: 114389792194423072}
+  - component: {fileID: 82331407421185908}
   m_Layer: 0
   m_Name: PlayerB
   m_TagString: Untagged
@@ -177,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1802360006157934}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 21.1, y: -0.01, z: 0}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4016830951929538}
@@ -398,6 +399,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7573144, y: 6.7038317}
   m_EdgeRadius: 0
+--- !u!82 &82331407421185908
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1802360006157934}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 10
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114389792194423072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,6 +510,7 @@ MonoBehaviour:
   ps: {fileID: 198340945593233982, guid: 5bfc39b265f93404e851b7af5e1eb5db, type: 2}
   firePs: {fileID: 198470194393226256, guid: 84bc952f2ab4ad84e8de857d1f2654ec, type: 2}
   psTransform: {fileID: 4209539568790740}
+  playerHitClip: {fileID: 8300000, guid: 11edabf7214960d4b98846dde1aedac6, type: 3}
   photonTag: Photon
 --- !u!114 &114548282734961138
 MonoBehaviour:
@@ -447,6 +529,7 @@ MonoBehaviour:
   ps: {fileID: 198340945593233982, guid: 5bfc39b265f93404e851b7af5e1eb5db, type: 2}
   firePs: {fileID: 198470194393226256, guid: 84bc952f2ab4ad84e8de857d1f2654ec, type: 2}
   psTransform: {fileID: 4802360166434456}
+  playerHitClip: {fileID: 8300000, guid: 11edabf7214960d4b98846dde1aedac6, type: 3}
   photonTag: Photon
 --- !u!114 &114674742404166434
 MonoBehaviour:
@@ -461,7 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upButton: 273
   downButton: 274
-  force: 600
+  force: 150
   bullet: {fileID: 1703002037296496, guid: 61ef73f6c34e8334482416962ac64da4, type: 2}
   firePosition: {fileID: 4927593422765986}
   gt: {fileID: 0}
@@ -469,8 +552,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0.0009918213
-      value: 0.109069824
+      time: 0
+      value: 0
       inSlope: 1
       outSlope: 1
       tangentMode: 0
@@ -485,6 +568,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   shootingTimeLoop: 0.5
   bulletForce: 40
+  shootClip: {fileID: 8300000, guid: ebf5062d422f9a246bee984bff387805, type: 3}
 --- !u!212 &212430191550767792
 SpriteRenderer:
   m_ObjectHideFlags: 1

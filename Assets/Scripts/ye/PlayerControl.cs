@@ -22,11 +22,15 @@ public class PlayerControl : MonoBehaviour {
 
     public float bulletForce = 40;
 
+    public AudioClip shootClip;
+
     Rigidbody2D playerRigidbody;
 
     Vector2 forceVector;
 
     GameObject newBullet;
+
+    AudioSource audioSource;
 
     float timeSum = 0;
 
@@ -34,6 +38,7 @@ public class PlayerControl : MonoBehaviour {
 	void Start () {
         playerRigidbody = GetComponent<Rigidbody2D>();
         ShootingController();
+        audioSource = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -73,6 +78,11 @@ public class PlayerControl : MonoBehaviour {
     void ShootingController()
     {
         Instantiate(bullet, firePosition.position, firePosition.rotation * Quaternion.Euler(0, 0, -90));
+
+        if(audioSource && shootClip)
+        {
+            audioSource.PlayOneShot(shootClip);
+        }
     }
 
 }

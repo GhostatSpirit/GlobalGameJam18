@@ -418,6 +418,13 @@ MonoBehaviour:
   force: 40
   bullet: {fileID: 1703002037296496, guid: 61ef73f6c34e8334482416962ac64da4, type: 2}
   firePosition: {fileID: 1136495688}
+  gt: {fileID: 0}
+  shootingTimeCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   shootingTimeLoop: 1
   bulletForce: 40
 --- !u!212 &185212417
@@ -620,6 +627,8 @@ MonoBehaviour:
   selfStatus: {fileID: 0}
   shooter: 0
   ps: {fileID: 0}
+  firePs: {fileID: 0}
+  psTransform: {fileID: 0}
   photonTag: Photon
 --- !u!61 &286934521
 BoxCollider2D:
@@ -1491,6 +1500,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 2.9014912
       objectReference: {fileID: 0}
+    - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: gt
+      value: 
+      objectReference: {fileID: 1149293732}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c1c520ce6895374c86455f4aff39918, type: 2}
   m_IsPrefabParent: 0
@@ -2739,6 +2753,13 @@ MonoBehaviour:
   force: 40
   bullet: {fileID: 1703002037296496, guid: c6185d7cfadf4e542ab57628571f6180, type: 2}
   firePosition: {fileID: 1468715000}
+  gt: {fileID: 0}
+  shootingTimeCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   shootingTimeLoop: 1
   bulletForce: 40
 --- !u!61 &896463137
@@ -3602,6 +3623,8 @@ MonoBehaviour:
   selfStatus: {fileID: 0}
   shooter: 0
   ps: {fileID: 0}
+  firePs: {fileID: 0}
+  psTransform: {fileID: 0}
   photonTag: Photon
 --- !u!1 &1149267778
 GameObject:
@@ -5511,6 +5534,11 @@ Prefab:
       propertyPath: selfStatus
       value: 
       objectReference: {fileID: 48234578}
+    - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
+        type: 2}
+      propertyPath: gt
+      value: 
+      objectReference: {fileID: 1149293732}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b7f9b5ffb915134d8f235e549577c72, type: 2}
   m_IsPrefabParent: 0
@@ -5796,6 +5824,8 @@ MonoBehaviour:
   selfStatus: {fileID: 0}
   shooter: 0
   ps: {fileID: 0}
+  firePs: {fileID: 0}
+  psTransform: {fileID: 0}
   photonTag: Photon
 --- !u!1 &1789427537
 GameObject:
@@ -6281,6 +6311,8 @@ MonoBehaviour:
   selfStatus: {fileID: 0}
   shooter: 0
   ps: {fileID: 0}
+  firePs: {fileID: 0}
+  psTransform: {fileID: 0}
   photonTag: Photon
 --- !u!61 &1958155041
 BoxCollider2D:

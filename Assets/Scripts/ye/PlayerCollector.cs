@@ -16,13 +16,18 @@ public class PlayerCollector : MonoBehaviour {
 
     public Transform psTransform;
 
+    public AudioClip playerHitClip;
+
     float points;
 
     bool triggered = false;
 
+    AudioSource audioSource;
+
     void Start()
     {
-        triggered = false;    
+        triggered = false;
+        audioSource = GetComponentInParent<AudioSource>();
     }
 
     void Update()
@@ -72,27 +77,32 @@ public class PlayerCollector : MonoBehaviour {
 
                 //Debug.Log(photon.GetComponent<Rigidbody2D>().velocity);
 
-                RaycastHit2D hit = Physics2D.Raycast(photon.transform.position, photon.GetComponent<Rigidbody2D>().velocity);
+                RaycastHit2D hit = Physics2D.Raycast(photon.transform.position, photon.GetComponent<Rigidbody2D>().velocity, 1f);
                 ParticleSystem newPs;
                 if (hit == true)
                 {
-                    newPs = Instantiate(ps, (Vector3)hit.point, Quaternion.Euler(0, 0, 0));
+                    newPs = Instantiate(ps, (Vector3)hit.point, Quaternion.Euler(0, 0, 0), transform);
                     Destroy(newPs, 1);
                     //Debug.Log("here??");
+                    TryPlayHitSound();
+
+
                 }
                 else
                 {
-                    hit = Physics2D.Raycast(photon.transform.position, -photon.GetComponent<Rigidbody2D>().velocity);
-                    if(hit == true)
-                    {
-                        newPs = Instantiate(ps, (Vector3)hit.point, Quaternion.Euler(0, 0, 0));
-                        Destroy(newPs, 1);
-                        //Debug.Log("here?????");
-                    }
-                    else
-                    {
-                        //Debug.Log("wtf");
-                    }
+                    //hit = Physics2D.Raycast(photon.transform.position, -photon.GetComponent<Rigidbody2D>().velocity, 1f);
+                    //if(hit == true)
+                    //{
+                    //    newPs = Instantiate(ps, (Vector3)hit.point, Quaternion.Euler(0, 0, 0), transform);
+                    //    Destroy(newPs, 1);
+                    //    //Debug.Log("here?????");
+                    //    TryPlayHitSound();
+                    //}
+
+                    newPs = Instantiate(ps, collision.transform.position, Quaternion.Euler(0, 0, 0), transform);
+                    Destroy(newPs, 1);
+                    //Debug.Log("here?????");
+                    TryPlayHitSound();
                 }
                 //Debug.Log("damn");
                 selfStatus.MinusHealth(points);          
@@ -102,5 +112,12 @@ public class PlayerCollector : MonoBehaviour {
         }
     }
 
+    void TryPlayHitSound()
+    {
+        if(audioSource && playerHitClip)
+        {
+            audioSource.PlayOneShot(playerHitClip);
+        }
+    }
 
 }
