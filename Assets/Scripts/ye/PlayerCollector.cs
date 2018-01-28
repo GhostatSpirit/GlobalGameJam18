@@ -13,7 +13,7 @@ public class PlayerCollector : MonoBehaviour {
     public string photonTag = "Photon";
     void OnCollisionEnter2D(Collision2D coll)
     {
-        Debug.Log("Hit!");
+        //Debug.Log("Hit!");
 
         if (coll.gameObject.tag == photonTag)
         {
@@ -29,7 +29,7 @@ public class PlayerCollector : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit!");
+        //Debug.Log("Hit!");
 
         if (collision.gameObject.tag == photonTag)
         {

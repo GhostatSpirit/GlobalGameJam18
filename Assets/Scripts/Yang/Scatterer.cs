@@ -95,7 +95,7 @@ public class Scatterer : MonoBehaviour {
         }
 
         photon.lastScatterColl = scatterColl;
-        Destroy(photonGO);
+        photon.InstantDead();
 
     }
 

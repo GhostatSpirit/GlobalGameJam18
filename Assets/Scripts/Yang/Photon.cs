@@ -72,7 +72,7 @@ public class Photon : MonoBehaviour {
         renderTransform = GetComponentInChildren<Renderer>().transform;
 
         initScale = renderTransform.lossyScale;
-        Debug.Log(initScale);
+        //Debug.Log(initScale);
 
         renderTransform.localScale = new Vector3
             (initScale.x * maxSize, initScale.y * maxSize, initScale.z * maxSize);
