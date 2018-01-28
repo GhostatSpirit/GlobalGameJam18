@@ -20,7 +20,16 @@ public class GameTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        realTime -= Time.deltaTime;
+        if (realTime > 0)
+        {
+            realTime -= Time.deltaTime;
+        }
+        
+        if(realTime < 0)
+        {
+            realTime = 0;
+        }
+
         text.text = ((int)realTime).ToString();
 	}
 }

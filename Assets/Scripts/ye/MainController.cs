@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainController : MonoBehaviour {
 
-    public GameObject restartButton, endButton, winnerLeft, winnerRight, backgroundImg;
+    public GameObject restartButton, endButton, winnerLeft, winnerRight, backgroundImg, draw;
 
     public PlayerStatus playerAStatus, playerBStatus;
 
@@ -24,7 +24,11 @@ public class MainController : MonoBehaviour {
             endButton.SetActive(true);
             backgroundImg.SetActive(true);
 
-            if(playerAStatus.health == 0)
+            if (playerAStatus.health == 0 && playerBStatus.health == 0)
+            {
+                draw.SetActive(true);
+            }
+            else if(playerAStatus.health == 0)
             {
                 winnerRight.SetActive(true);
             }
@@ -34,7 +38,7 @@ public class MainController : MonoBehaviour {
             }
 
         }
-        else if(gt.realTime == 0 ){
+        else if(gt.realTime == 0){
 
             Time.timeScale = 0;
             restartButton.SetActive(true);
@@ -48,6 +52,10 @@ public class MainController : MonoBehaviour {
             else if (playerAStatus.health < playerBStatus.health)
             {
                 winnerRight.SetActive(true);
+            }
+            else
+            {
+                draw.SetActive(true);
             }
         }
 	}

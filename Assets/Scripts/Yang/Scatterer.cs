@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Scatterer : MonoBehaviour {
 
+    public ParticleSystem ps;
+
     public float minScatterEnergy = 9f;
     public float minScatterAngle = 30f;
 
@@ -72,6 +74,15 @@ public class Scatterer : MonoBehaviour {
 
 
         // this photon could be scattered
+
+        //Debug.Log(transform.rotation.eulerAngles);
+
+        Instantiate(ps, transform.position, 
+            Quaternion.Euler(
+            transform.rotation.eulerAngles.x,
+            transform.rotation.eulerAngles.y,
+            transform.rotation.eulerAngles.z - 90));
+
         float deltaAngle = scatterAngle / (scatterCount - 1);
         float startAngle = -scatterAngle / 2f;
         float scatteredEnergy = photon.curEnergy / scatterCount;

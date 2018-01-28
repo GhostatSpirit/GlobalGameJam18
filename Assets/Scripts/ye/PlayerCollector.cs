@@ -45,7 +45,7 @@ public class PlayerCollector : MonoBehaviour {
                 photon.InstantDead();
             if (targetStatus != null && collision.gameObject.GetComponent<Photon>().shooter == shooter)
             {
-                Debug.Log("Hit!");
+                //Debug.Log("Hit!");
                 //Debug.Log("in");
 
                 //Debug.Log(photon.transform.position);
@@ -58,7 +58,7 @@ public class PlayerCollector : MonoBehaviour {
                 {
                     newPs = Instantiate(ps, (Vector3)hit.point, Quaternion.Euler(0, 0, 0));
                     Destroy(newPs, 1);
-                    Debug.Log("here??");
+                    //Debug.Log("here??");
                 }
                 else
                 {
@@ -67,14 +67,14 @@ public class PlayerCollector : MonoBehaviour {
                     {
                         newPs = Instantiate(ps, (Vector3)hit.point, Quaternion.Euler(0, 0, 0));
                         Destroy(newPs, 1);
-                        Debug.Log("here?????");
+                        //Debug.Log("here?????");
                     }
                     else
                     {
-                        Debug.Log("wtf");
+                        //Debug.Log("wtf");
                     }
                 }
-                Debug.Log("damn");
+                //Debug.Log("damn");
                 selfStatus.MinusHealth(points);          
                 //targetStatus.addScore(1);
 

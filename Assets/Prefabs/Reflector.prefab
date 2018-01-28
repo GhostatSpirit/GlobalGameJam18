@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 68694581560910034}
   - component: {fileID: 114157053051752054}
   - component: {fileID: 114428956460533360}
+  - component: {fileID: 95712807449770922}
+  - component: {fileID: 114127114050134808}
   m_Layer: 0
   m_Name: Reflector
   m_TagString: Untagged
@@ -116,6 +118,34 @@ EdgeCollider2D:
   m_Points:
   - {x: -1.5975645, y: -0.22865874}
   - {x: 1.5975642, y: -0.22865921}
+--- !u!95 &95712807449770922
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253926430151382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e5d8dc58350e004e8b913126e575bd7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114127114050134808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253926430151382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a2d5ad935276d44b8285eace6318be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114157053051752054
 MonoBehaviour:
   m_ObjectHideFlags: 1
