@@ -1520,27 +1520,27 @@ Prefab:
     - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[0].inSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[0].outSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[1].inSlope
-      value: 3.8280663
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[1].outSlope
-      value: 3.8280663
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[1].time
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
@@ -5447,22 +5447,22 @@ Prefab:
     - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[0].inSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[0].outSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[1].inSlope
-      value: 3.8280663
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[1].outSlope
-      value: 3.8280663
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
@@ -5477,7 +5477,7 @@ Prefab:
     - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
       propertyPath: shootingTimeCurve.m_Curve.Array.data[1].time
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
