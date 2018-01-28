@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1703002037296496}
   m_IsPrefabParent: 1
+--- !u!1 &1562937501747490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4594467693532338}
+  - component: {fileID: 212032644434728794}
+  - component: {fileID: 96230935773717078}
+  m_Layer: 12
+  m_Name: Renderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1703002037296496
 GameObject:
   m_ObjectHideFlags: 0
@@ -19,11 +36,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4385811474210462}
-  - component: {fileID: 212424157037270292}
   - component: {fileID: 58542312682660430}
   - component: {fileID: 50393868017756462}
   - component: {fileID: 114766135660983962}
-  - component: {fileID: 96162516039842120}
   m_Layer: 12
   m_Name: PhotonRight
   m_TagString: Photon
@@ -38,10 +53,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703002037296496}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 12.23, y: -0.91, z: 10.224748}
+  m_LocalPosition: {x: 12.23, y: -0.91, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
+  m_Children:
+  - {fileID: 4594467693532338}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4594467693532338
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1562937501747490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4385811474210462}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50393868017756462
@@ -78,14 +107,14 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!96 &96162516039842120
+  m_Radius: 0.25
+--- !u!96 &96230935773717078
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703002037296496}
+  m_GameObject: {fileID: 1562937501747490}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
@@ -117,7 +146,7 @@ TrailRenderer:
   m_Time: 1
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.8
+    widthMultiplier: 0.95
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -133,7 +162,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.99215686, g: 0.7019608, b: 0.827451, a: 1}
-      key1: {r: 0.99215686, g: 0.7019608, b: 0.827451, a: 0}
+      key1: {r: 0.99215686, g: 0.7019608, b: 0.827451, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -149,8 +178,8 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime1: 32768
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
@@ -158,7 +187,7 @@ TrailRenderer:
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -178,13 +207,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: 1
-  maxEnergy: 10
+  maxEnergy: 20
   curEnergy: 0
-  minSize: 0.1
+  minSize: 0.25
   maxSize: 1
   minVelocity: 5
   maxVelocity: 20
+  killWaitTime: 2
   sizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  velocityCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
@@ -202,34 +250,17 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  velocityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
   mediumProp:
     energyFallRate: 1
     velocityFactor: 1
+  trailWidthFactor: 0.95
   lastScatterColl: {fileID: 0}
---- !u!212 &212424157037270292
+--- !u!212 &212032644434728794
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703002037296496}
+  m_GameObject: {fileID: 1562937501747490}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
