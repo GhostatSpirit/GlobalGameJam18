@@ -464,6 +464,25 @@ MonoBehaviour:
   force: 600
   bullet: {fileID: 1703002037296496, guid: c6185d7cfadf4e542ab57628571f6180, type: 2}
   firePosition: {fileID: 4791294454698814}
+  gt: {fileID: 0}
+  shootingTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.065841675
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9949341
+      value: 0.9450546
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   shootingTimeLoop: 0.5
   bulletForce: 40
 --- !u!212 &212318167198645314

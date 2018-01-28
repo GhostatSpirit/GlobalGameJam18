@@ -418,6 +418,13 @@ MonoBehaviour:
   force: 40
   bullet: {fileID: 1703002037296496, guid: 61ef73f6c34e8334482416962ac64da4, type: 2}
   firePosition: {fileID: 1136495688}
+  gt: {fileID: 0}
+  shootingTimeCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   shootingTimeLoop: 1
   bulletForce: 40
 --- !u!212 &185212417
@@ -1266,6 +1273,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114807217074948786, guid: 9c1c520ce6895374c86455f4aff39918,
+        type: 2}
+      propertyPath: gt
+      value: 
+      objectReference: {fileID: 1149293732}
     - target: {fileID: 114445122439964872, guid: 9c1c520ce6895374c86455f4aff39918,
         type: 2}
       propertyPath: targetStatus
@@ -2410,6 +2422,13 @@ MonoBehaviour:
   force: 40
   bullet: {fileID: 1703002037296496, guid: c6185d7cfadf4e542ab57628571f6180, type: 2}
   firePosition: {fileID: 1468715000}
+  gt: {fileID: 0}
+  shootingTimeCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   shootingTimeLoop: 1
   bulletForce: 40
 --- !u!61 &896463137
@@ -3432,7 +3451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2c5195b871a3d49ab9ef02ad3b9815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limitTime: 180
+  limitTime: 120
   realTime: 0
 --- !u!1 &1164722892
 GameObject:
@@ -4725,6 +4744,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114674742404166434, guid: 9b7f9b5ffb915134d8f235e549577c72,
+        type: 2}
+      propertyPath: gt
+      value: 
+      objectReference: {fileID: 1149293732}
     - target: {fileID: 114506950467156470, guid: 9b7f9b5ffb915134d8f235e549577c72,
         type: 2}
       propertyPath: targetStatus

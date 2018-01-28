@@ -14,7 +14,11 @@ public class PlayerControl : MonoBehaviour {
 
     public Transform firePosition;
 
-    public float shootingTimeLoop = 5;
+    public GameTimer gt;
+
+    public AnimationCurve shootingTimeCurve;
+
+    [HideInInspector]public float shootingTimeLoop = 1.0f;
 
     public float bulletForce = 40;
 
@@ -34,6 +38,8 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        shootingTimeLoop = shootingTimeCurve.Evaluate((float)gt.realTime / gt.limitTime);
 
         MovementController();
 
