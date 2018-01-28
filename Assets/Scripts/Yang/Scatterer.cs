@@ -76,12 +76,16 @@ public class Scatterer : MonoBehaviour {
         // this photon could be scattered
 
         //Debug.Log(transform.rotation.eulerAngles);
+        if (ps)
+        {
+            ParticleSystem newPs = Instantiate(ps, coll.transform.position,
+                Quaternion.Euler(
+                transform.rotation.eulerAngles.x,
+                transform.rotation.eulerAngles.y,
+                transform.rotation.eulerAngles.z + 90));
 
-        Instantiate(ps, transform.position, 
-            Quaternion.Euler(
-            transform.rotation.eulerAngles.x,
-            transform.rotation.eulerAngles.y,
-            transform.rotation.eulerAngles.z - 90));
+            // newPs.transform.parent = transform;
+        }
 
         float deltaAngle = scatterAngle / (scatterCount - 1);
         float startAngle = -scatterAngle / 2f;
