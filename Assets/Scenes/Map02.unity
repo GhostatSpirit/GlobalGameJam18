@@ -6285,12 +6285,12 @@ Prefab:
     - target: {fileID: 114274702087165144, guid: a5ab97407aec8b243bc0a63d520cf7d2,
         type: 2}
       propertyPath: mediumProp.energyFallRate
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114274702087165144, guid: a5ab97407aec8b243bc0a63d520cf7d2,
         type: 2}
       propertyPath: mediumProp.velocityFactor
-      value: 0.3
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5ab97407aec8b243bc0a63d520cf7d2, type: 2}
@@ -6450,12 +6450,12 @@ Prefab:
     - target: {fileID: 114274702087165144, guid: a5ab97407aec8b243bc0a63d520cf7d2,
         type: 2}
       propertyPath: mediumProp.energyFallRate
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114274702087165144, guid: a5ab97407aec8b243bc0a63d520cf7d2,
         type: 2}
       propertyPath: mediumProp.velocityFactor
-      value: 0.3
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5ab97407aec8b243bc0a63d520cf7d2, type: 2}
