@@ -6,14 +6,18 @@ public class PlayerCollector : MonoBehaviour {
 
     public PlayerStatus targetStatus;
 
+    public PlayerStatus selfStatus;
+
     public Shooter shooter;
 
     public ParticleSystem ps;
 
+    float points;
+
     public string photonTag = "Photon";
     void OnCollisionEnter2D(Collision2D coll)
     {
-        //Debug.Log("Hit!");
+        Debug.Log("Hit!");
 
         if (coll.gameObject.tag == photonTag)
         {
@@ -29,15 +33,19 @@ public class PlayerCollector : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("Hit!");
+        
 
         if (collision.gameObject.tag == photonTag)
         {
             
             Photon photon = collision.transform.GetComponent<Photon>();
-            photon.InstantDead();
+
+            points = photon.curEnergy;
+            
+                photon.InstantDead();
             if (targetStatus != null && collision.gameObject.GetComponent<Photon>().shooter == shooter)
             {
+                //Debug.Log("Hit!");
                 //Debug.Log("in");
 
                 //Debug.Log(photon.transform.position);
@@ -66,8 +74,9 @@ public class PlayerCollector : MonoBehaviour {
                         //Debug.Log("wtf");
                     }
                 }
-                //Debug.Log("damn");           
-                targetStatus.addScore(1);
+                //Debug.Log("damn");
+                selfStatus.MinusHealth(points);          
+                //targetStatus.addScore(1);
 
             }
         }
