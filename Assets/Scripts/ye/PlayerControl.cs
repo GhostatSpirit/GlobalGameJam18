@@ -64,13 +64,13 @@ public class PlayerControl : MonoBehaviour {
     {
         if (Input.GetKey(upButton))
         {
-            forceVector = new Vector2(0, force * Time.fixedDeltaTime);
+            forceVector = new Vector2(0, force * Time.deltaTime);
             playerRigidbody.AddForce(forceVector, ForceMode2D.Impulse);
         }
 
         else if (Input.GetKey(downButton))
         {
-            forceVector = new Vector2(0, -force * Time.fixedDeltaTime);
+            forceVector = new Vector2(0, -force * Time.deltaTime);
             playerRigidbody.AddForce(forceVector, ForceMode2D.Impulse);
         }
     }
