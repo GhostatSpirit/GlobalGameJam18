@@ -12,7 +12,27 @@ public class PlayerCollector : MonoBehaviour {
 
     public ParticleSystem ps;
 
+    public ParticleSystem firePs;
+
+    public Transform psTransform;
+
     float points;
+
+    bool triggered = false;
+
+    void Start()
+    {
+        triggered = false;    
+    }
+
+    void Update()
+    {
+        if (selfStatus.health < 0.5 * selfStatus.maxHealth && triggered == false)
+        {
+            Instantiate(firePs, psTransform);
+            triggered = true;
+        }
+    }
 
     public string photonTag = "Photon";
     void OnCollisionEnter2D(Collision2D coll)

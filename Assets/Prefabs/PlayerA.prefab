@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1322268124829784}
   m_IsPrefabParent: 1
+--- !u!1 &1167880565944670
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4027396380857104}
+  m_Layer: 9
+  m_Name: 'PSPosition '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1217051365599394
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +95,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1832310275154580
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4577261060191538}
+  m_Layer: 9
+  m_Name: PSPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1884478666858886
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +142,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4027396380857104
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167880565944670}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4700001, y: -4.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4431428086914666}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4342821391008100
 Transform:
   m_ObjectHideFlags: 1
@@ -132,7 +175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322268124829784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 0}
+  m_LocalPosition: {x: -21.1, y: -0.11, z: 0}
   m_LocalScale: {x: 0.3, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4791294454698814}
@@ -152,7 +195,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9999998, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4027396380857104}
   m_Father: {fileID: 4366413707930394}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -165,9 +209,23 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4577261060191538}
   m_Father: {fileID: 4366413707930394}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4577261060191538
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832310275154580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.47, y: 4.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4546085868160170}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4787426919029170
 Transform:
@@ -189,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217051365599394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.94, y: 0, z: 0}
+  m_LocalPosition: {x: 6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4366413707930394}
@@ -207,7 +265,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 10
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: c08be9c4bb6203d4cbb84dc4a4fd349b, type: 2}
@@ -224,10 +282,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.39, y: -4.620536}
+  m_Offset: {x: 1.3430297, y: -4.620536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -238,7 +296,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.668591, y: 6.365903}
+  m_Size: {x: 2.5766535, y: 6.365903}
   m_EdgeRadius: 0
 --- !u!61 &61113749178084836
 BoxCollider2D:
@@ -252,7 +310,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.43, y: 0.06627631}
+  m_Offset: {x: 2.2696614, y: 0.03680873}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -263,7 +321,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.0462723, y: 3.7854195}
+  m_Size: {x: 4.849841, y: 2.9014912}
   m_EdgeRadius: 0
 --- !u!61 &61144451567876182
 BoxCollider2D:
@@ -277,7 +335,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.39, y: 4.5360155}
+  m_Offset: {x: 1.3824548, y: 4.5360155}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -288,7 +346,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8225265, y: 6.6482105}
+  m_Size: {x: 2.7243102, y: 6.6482105}
   m_EdgeRadius: 0
 --- !u!61 &61172800074125078
 BoxCollider2D:
@@ -302,7 +360,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.39, y: -4.49376}
+  m_Offset: {x: 1.3713858, y: -4.49376}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -313,7 +371,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.633381, y: 6.534936}
+  m_Size: {x: 2.7315965, y: 6.534936}
   m_EdgeRadius: 0
 --- !u!61 &61686522023215968
 BoxCollider2D:
@@ -324,10 +382,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.39, y: 4.5994015}
+  m_Offset: {x: 1.4106474, y: 4.4882555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -338,7 +396,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0327353, y: 6.8595047}
+  m_Size: {x: 2.793373, y: 6.6372128}
   m_EdgeRadius: 0
 --- !u!114 &114306833973291666
 MonoBehaviour:
@@ -352,8 +410,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 0}
-  shooter: 0
-  ps: {fileID: 0}
+  selfStatus: {fileID: 114753319066914926}
+  shooter: 1
+  ps: {fileID: 198909632685238476, guid: d4f563cd2c687074b9b7aa5798e19053, type: 2}
+  firePs: {fileID: 198470194393226256, guid: 84bc952f2ab4ad84e8de857d1f2654ec, type: 2}
+  psTransform: {fileID: 4577261060191538}
   photonTag: Photon
 --- !u!114 &114445122439964872
 MonoBehaviour:
@@ -367,8 +428,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 0}
-  shooter: 0
-  ps: {fileID: 0}
+  selfStatus: {fileID: 114753319066914926}
+  shooter: 1
+  ps: {fileID: 198909632685238476, guid: d4f563cd2c687074b9b7aa5798e19053, type: 2}
+  firePs: {fileID: 198470194393226256, guid: 84bc952f2ab4ad84e8de857d1f2654ec, type: 2}
+  psTransform: {fileID: 4027396380857104}
   photonTag: Photon
 --- !u!114 &114753319066914926
 MonoBehaviour:
@@ -382,6 +446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  health: 0
+  maxHealth: 100
 --- !u!114 &114807217074948786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,9 +461,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upButton: 119
   downButton: 115
-  force: 200
+  force: 600
   bullet: {fileID: 1703002037296496, guid: c6185d7cfadf4e542ab57628571f6180, type: 2}
   firePosition: {fileID: 4791294454698814}
+  gt: {fileID: 0}
+  shootingTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.065841675
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9949341
+      value: 0.9450546
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   shootingTimeLoop: 0.5
   bulletForce: 40
 --- !u!212 &212318167198645314

@@ -77,6 +77,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1474565126703864
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4209539568790740}
+  m_Layer: 9
+  m_Name: 'PSPosition '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1788493620978008
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +127,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1834881998768502
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4802360166434456}
+  m_Layer: 9
+  m_Name: PSPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4016830951929538
 Transform:
   m_ObjectHideFlags: 1
@@ -121,7 +151,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4209539568790740}
   m_Father: {fileID: 4187440504430182}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -134,7 +165,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4802360166434456}
   m_Father: {fileID: 4187440504430182}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -145,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1802360006157934}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 21.1, y: -0.01, z: 0}
   m_LocalScale: {x: 0.3, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4016830951929538}
@@ -156,6 +188,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!4 &4209539568790740
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474565126703864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.46, y: -3.9699998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4016830951929538}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4421454145838694
 Transform:
   m_ObjectHideFlags: 1
@@ -182,6 +227,19 @@ Transform:
   m_Father: {fileID: 4187440504430182}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4802360166434456
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834881998768502}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.459999, y: 3.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4120373195926482}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4927593422765986
 Transform:
   m_ObjectHideFlags: 1
@@ -189,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788493620978008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.01, y: 0, z: 0}
+  m_LocalPosition: {x: 5.64, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4187440504430182}
@@ -207,7 +265,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 10
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: c08be9c4bb6203d4cbb84dc4a4fd349b, type: 2}
@@ -227,7 +285,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.46, y: -4.5206404}
+  m_Offset: {x: 1.4440479, y: -4.5206404}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -238,7 +296,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.582118, y: 6.6194553}
+  m_Size: {x: 2.7571936, y: 6.6194553}
   m_EdgeRadius: 0
 --- !u!61 &61294015058314098
 BoxCollider2D:
@@ -252,7 +310,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.46, y: 4.427888}
+  m_Offset: {x: 1.4135928, y: 4.427888}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -263,7 +321,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5915082, y: 6.703829}
+  m_Size: {x: 2.6965265, y: 6.703829}
   m_EdgeRadius: 0
 --- !u!61 &61391191461366542
 BoxCollider2D:
@@ -277,7 +335,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.46, y: -4.474266}
+  m_Offset: {x: 1.4182755, y: -4.474266}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -288,7 +346,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6851845, y: 6.712206}
+  m_Size: {x: 2.790222, y: 6.712206}
   m_EdgeRadius: 0
 --- !u!61 &61536078812788326
 BoxCollider2D:
@@ -302,7 +360,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.32, y: -0.05917096}
+  m_Offset: {x: 2.30504, y: -0.05917096}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -313,7 +371,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.7241907, y: 2.4131594}
+  m_Size: {x: 4.7241716, y: 2.4131594}
   m_EdgeRadius: 0
 --- !u!61 &61824745195147968
 BoxCollider2D:
@@ -327,7 +385,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.46, y: 4.4278874}
+  m_Offset: {x: 1.4532319, y: 4.4278874}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -338,7 +396,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.617277, y: 6.7038317}
+  m_Size: {x: 2.7573144, y: 6.7038317}
   m_EdgeRadius: 0
 --- !u!114 &114389792194423072
 MonoBehaviour:
@@ -352,6 +410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  health: 0
+  maxHealth: 100
 --- !u!114 &114506950467156470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -364,8 +424,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 0}
+  selfStatus: {fileID: 114389792194423072}
   shooter: 0
-  ps: {fileID: 0}
+  ps: {fileID: 198340945593233982, guid: 5bfc39b265f93404e851b7af5e1eb5db, type: 2}
+  firePs: {fileID: 198470194393226256, guid: 84bc952f2ab4ad84e8de857d1f2654ec, type: 2}
+  psTransform: {fileID: 4209539568790740}
   photonTag: Photon
 --- !u!114 &114548282734961138
 MonoBehaviour:
@@ -379,8 +442,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetStatus: {fileID: 0}
+  selfStatus: {fileID: 114389792194423072}
   shooter: 0
-  ps: {fileID: 0}
+  ps: {fileID: 198340945593233982, guid: 5bfc39b265f93404e851b7af5e1eb5db, type: 2}
+  firePs: {fileID: 198470194393226256, guid: 84bc952f2ab4ad84e8de857d1f2654ec, type: 2}
+  psTransform: {fileID: 4802360166434456}
   photonTag: Photon
 --- !u!114 &114674742404166434
 MonoBehaviour:
@@ -395,9 +461,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upButton: 273
   downButton: 274
-  force: 200
+  force: 600
   bullet: {fileID: 1703002037296496, guid: 61ef73f6c34e8334482416962ac64da4, type: 2}
   firePosition: {fileID: 4927593422765986}
+  gt: {fileID: 0}
+  shootingTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.0009918213
+      value: 0.109069824
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   shootingTimeLoop: 0.5
   bulletForce: 40
 --- !u!212 &212430191550767792
