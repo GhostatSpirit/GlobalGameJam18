@@ -6,16 +6,23 @@ public class Reflector : MonoBehaviour {
     public string photonTag = "Photon";
     public AudioClip reflectSound;
     AudioSource myAudioSource;
+
+    Animator animator;
+
     // Use this for initialization
     void Start()
     {
+        animator = GetComponent<Animator>();
         myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if ()
+        //{
 
+        //}
     }
 
     void FixedUpdate()
@@ -29,7 +36,9 @@ public class Reflector : MonoBehaviour {
 
         if(coll.gameObject.tag == photonTag)
         {
-            if(coll.otherCollider.transform == transform)
+            animator.SetBool("Hit", true);
+            //animator.SetBool("Hit", false);
+            if (coll.otherCollider.transform == transform)
             {
 
                 if (coll.transform.tag != "Player")
@@ -39,6 +48,7 @@ public class Reflector : MonoBehaviour {
             } else
             {
                 // hit the back side
+                
                 Photon photon = coll.transform.GetComponent<Photon>();
                 photon.curEnergy = 0f;
             }
