@@ -19,7 +19,7 @@ public class PhotonHit : MonoBehaviour {
         
         if(collision.gameObject.tag == "Photon")
         {
-            if(collision.contacts.Length > 1)
+            if(collision.contacts.Length >= 1)
             {
                 Instantiate(ps, (Vector3)collision.contacts[0].point, Quaternion.Euler(0, 0, 0));
             }

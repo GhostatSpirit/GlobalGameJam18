@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Scatterer : MonoBehaviour {
 
+    public ParticleSystem ps;
+
     public float minScatterEnergy = 9f;
     public float minScatterAngle = 30f;
 
@@ -15,6 +17,8 @@ public class Scatterer : MonoBehaviour {
     // after scattering, the new scattered photon will be prevented from scattering
     // for xx seconds
     public float scatterImmuneTime = 1f;
+
+    public bool doubleSided = false;
 
     public string photonTag = "Photon";
 
@@ -63,8 +67,26 @@ public class Scatterer : MonoBehaviour {
             normal = -transform.up;
         }
 
+        if(!doubleSided && Vector3.Dot(veloDir, transform.up) < 0f)
+        {
+            return;
+        }
+
 
         // this photon could be scattered
+
+        //Debug.Log(transform.rotation.eulerAngles);
+        if (ps)
+        {
+            ParticleSystem newPs = Instantiate(ps, coll.transform.position,
+                Quaternion.Euler(
+                transform.rotation.eulerAngles.x,
+                transform.rotation.eulerAngles.y,
+                transform.rotation.eulerAngles.z + 90));
+
+            // newPs.transform.parent = transform;
+        }
+
         float deltaAngle = scatterAngle / (scatterCount - 1);
         float startAngle = -scatterAngle / 2f;
         float scatteredEnergy = photon.curEnergy / scatterCount;
@@ -88,7 +110,7 @@ public class Scatterer : MonoBehaviour {
         }
 
         photon.lastScatterColl = scatterColl;
-        Destroy(photonGO);
+        photon.InstantDead();
 
     }
 
