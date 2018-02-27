@@ -8,6 +8,8 @@ public class PlayerStatus : MonoBehaviour {
 
     [HideInInspector] public float health = 0;
 
+    public PlayerTag playerTag;
+
     public float maxHealth = 100;
 
 	// Use this for initialization
